@@ -1,0 +1,169 @@
+:root {
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+    --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--Very-dark-blue-main-BG);
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    border-radius: 10px;
+    background-color: var(--Very-dark-blue-card-BG);
+    padding: 15px;
+    width: 18%;
+    max-width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.5) -10px 12px 10px ;
+}
+
+.card-image {
+    position: relative;
+    display: inline-block;
+}
+
+.card-image img {
+    width: 100%;
+    border-radius: 5%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 96%;
+    border-radius: 5%;
+    background: rgba(0, 238, 255, 0.5) url('../../images/icon-view.svg') center no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-image:hover::after {
+    opacity: 1;
+}
+
+.card-title {
+    font-weight: 400;
+    color: var(--White);
+    cursor: pointer;
+}
+
+.card-title:hover {
+    color: var(--Cyan);
+}
+
+.card-description {
+    font-size: 11px;
+    color: var(--Soft-blue);
+    margin: 10px 0;
+}
+
+.card-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-item-1 span {
+    font-size: 11px;
+    color: var(--Cyan);
+}
+
+.card-item-1,
+.card-item-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-item-2 span {
+    font-size: 11px;
+    color: var(--Soft-blue);
+}
+
+hr {
+    border: none;
+    background-color: var(--Very-dark-blue-line);
+    width: 100%;
+    height: 1px;
+    margin: 10px 0;
+}
+
+.card-profil img {
+    width: 30px;
+    border: solid 2px var(--White);
+    border-radius: 50%;
+}
+
+.card-profil {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-profil div {
+    color: var(--Soft-blue);
+    font-size: 11px;
+}
+
+.card-profil span:hover {
+    color: var(--Cyan);
+}
+
+.card-profil span {
+    color: var(--White);
+    cursor: pointer;
+}
+
+@media (max-width: 968px) {
+    .container {
+        width: 50%;
+        padding: 20px;
+    }
+    
+    .card-description, 
+    .card-item-1 span, 
+    .card-item-2 span, 
+    .card-profil div {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .card-description, 
+    .card-item-1 span, 
+    .card-item-2 span, 
+    .card-profil div {
+        font-size: 10px;
+    }
+
+    .card-profil img {
+        width: 25px;
+    }
+}
