@@ -27,7 +27,7 @@ body {
     border-radius: 10px;
     background-color: var(--Very-dark-blue-card-BG);
     padding: 15px;
-    width: 18%;
+    width: 30%;
     max-width: 350px;
     box-shadow: rgba(0, 0, 0, 0.5) -10px 12px 10px ;
 }
